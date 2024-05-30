@@ -9,7 +9,7 @@ jobs:
   build:
     name: build
     runs-on: ubuntu-latest
-    environment: productions
+    environment: production
     steps:
       - name: action checkout
         uses: actions/checkout@v4
@@ -31,4 +31,4 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
