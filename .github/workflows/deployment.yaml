@@ -1,0 +1,13 @@
+name: pipeline of AWS Elastic Container Service
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    environment: productions
+    steps:
+      - name: action checkout
+        uses: actions/checkout@v4
